@@ -40,11 +40,21 @@ body::before {
 }
 /* Logo encima del formulario */
 
-.logo {
+.logo{
   display: block;
-  max-width: 760px;   /* tamaño ajustable url(image/xbri.svg)*/
-  margin: 0 auto 0px auto;  /* centrado y con espacio abajo */
-  bottom: 50px;
+  width: clamp(240px, 45vw, 620px); /* min 240px, crece con la ventana, máx 420px */
+  height: auto;                     /* mantiene proporción */
+  max-width: 100%;                  /* no supera el contenedor */
+  object-fit: contain;
+  margin: 0 auto 25px;              /* centrado */
+}
+
+/* Respeta notch y añade espacio arriba en móviles */
+:root { --safe-top: env(safe-area-inset-top); }
+header { padding-top: calc(28px + var(--safe-top)); }
+
+@media (max-width: 480px){
+  header { padding: 20px 16px 8px; } /* reduce laterales si hace falta */
 }
 
 /* Asegúrate que el contenedor principal esté encima */
