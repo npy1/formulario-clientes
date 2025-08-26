@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro – Clientes Importadores</title>
+
+  <!-- TIPOGRAFÍA -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- 🎥 Video de fondo -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="video/El Autocentro más Moderno PT.mp4" type="video/mp4">
+    Tu navegador no soporta el video de fondo.
+  </video>
+
+  <div class="wrap">
+    <div class="card">
+      <header>
+        <!-- Logo -->
+        <img src="image/xbri.svg" alt="Logo de la empresa" class="logo">
+        <h1>Formulario de Registro – Clientes Importadores</h1>
+        <p class="sub">Por favor, complete este formulario para brindarle información personalizada.</p>
+      </header>
+
+      <!-- 🚀 Formulario conectado a Google Forms -->
+      <form id="customForm" 
+            action="https://docs.google.com/forms/d/1YYsZONz6TSlYnUWBcSJ5cx04ZalqbKjo5KijqbYD9mI/formResponse" 
+            method="POST" target="hidden_iframe" onsubmit="handleSubmit(event)">
+        
+        <div class="grid">
+          <!-- País -->
+          <div>
+            <label for="country">País<span class="req">*</span></label>
+            <select id="country" name="entry.1975643584" required>
+              <option value="" disabled selected>Seleccione su país</option>
+              <option>Argentina</option>
+              <option>Bolivia</option>
+              <option>Brasil</option>
+              <option>Chile</option>
+              <option>Colombia</option>
+              <option>Costa Rica</option>
+              <option>Cuba</option>
+              <option>Dominicana (República Dominicana)</option>
+              <option>Ecuador</option>
+              <option>El Salvador</option>
+              <option>Guatemala</option>
+              <option>Haití</option>
+              <option>Honduras</option>
+              <option>México</option>
+              <option>Nicaragua</option>
+              <option>Panamá</option>
+              <option>Paraguay</option>
+              <option>Perú</option>
+              <option>Puerto Rico</option>
+              <option>Uruguay</option>
+              <option>Venezuela</option>
+              <option>Belice</option>
+              <option>Guyana</option>
+              <option>Surinam</option>
+              <option>Guayana Francesa</option>
+            </select>
+            <div class="help">Incluye todos los países y territorios de América Latina.</div>
+          </div>
+
+          <!-- Razón Social -->
+          <div>
+            <label for="company">Razón Social<span class="req">*</span></label>
+            <input id="company" name="entry.595112826" type="text" placeholder="Nombre legal de la empresa" required />
+          </div>
+        </div>
+
+        <!-- Perfil -->
+        <div>
+          <label>Perfil del cliente<span class="req">*</span></label>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="entry.874386458" value="Importador" required> Importador</label>
+            <label class="choice"><input type="radio" name="entry.874386458" value="Distribuidor"> Distribuidor</label>
+            <label class="choice"><input type="radio" name="entry.874386458" value="Particular"> Particular</label>
+          </div>
+        </div>
+
+        <div class="grid two">
+          <!-- Teléfono -->
+          <div>
+            <label for="phone">Número de contacto<span class="req">*</span></label>
+            <input id="phone" name="entry.378928787" type="text" inputmode="tel" placeholder="Ej. +595 981 000 000" required pattern="[+0-9()\-\s]{6,}" />
+            <div class="help">Incluya código de país. Se aceptan dígitos, espacios, +, -, y paréntesis.</div>
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="email">Email<span class="req">*</span></label>
+            <input id="email" name="entry.1773949371" type="email" placeholder="nombre@empresa.com" required />
+          </div>
+        </div>
+
+        <!-- Dirección -->
+        <div>
+          <label for="address">Dirección</label>
+          <textarea id="address" name="entry.1159851310" rows="3" placeholder="Calle, número, ciudad, estado/provincia"></textarea>
+        </div>
+
+        <div class="actions">
+          <button class="btn-primary" type="submit">Enviar</button>
+          <button class="btn-secondary" type="reset">Limpiar</button>
+        </div>
+      </form>
+
+      <div class="success" id="successMsg">¡Gracias! Su respuesta fue enviada correctamente.</div>
+    </div>
+  </div>
+
+  <!-- iFrame oculto -->
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>
