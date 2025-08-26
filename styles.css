@@ -2,13 +2,18 @@
   --bg: #f6f7fb;
   --card: #ffffff;
   --primary: #1f2937;
-  --accent: #2563eb;
+  --accent: #ff0000;
   --muted: #6b7280;
   --ring: rgba(37, 99, 235, 0.35);
   --radius: 16px;
 }
 
 * { box-sizing: border-box; }
+
+ *card {
+  opacity: 50%;
+ }
+
 
 body {
   margin: 0; padding: 0; background: var(--bg); color: var(--primary);
@@ -38,7 +43,8 @@ body::before {
 .logo {
   display: block;
   max-width: 760px;   /* tamaño ajustable url(image/xbri.svg)*/
-  margin: 0 auto 50px auto;  /* centrado y con espacio abajo */
+  margin: 0 auto 0px auto;  /* centrado y con espacio abajo */
+  bottom: 50px;
 }
 
 /* Asegúrate que el contenedor principal esté encima */
@@ -53,6 +59,7 @@ body::before {
 .card {
   background: var(--card); border-radius: var(--radius); box-shadow: 0 10px 30px rgba(0,0,0,0.06);
   overflow: hidden; border: 1px solid #eef0f5;
+  opacity: 90%;
 }
 
 header { padding: 28px 28px 8px 28px; }
